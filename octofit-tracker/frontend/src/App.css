@@ -1,0 +1,89 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+  color: #f8fafc;
+}
+
+.hero-card {
+  max-width: 720px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #93c5fd;
+  font-size: 0.85rem;
+}
+
+.hero-card h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: #fff;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+.primary-link,
+.secondary-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.primary-link {
+  background: #38bdf8;
+  color: #082f49;
+  font-weight: 700;
+}
+
+.secondary-pill {
+  color: #e2e8f0;
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-grid article {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.feature-grid h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.feature-grid p {
+  color: #e2e8f0;
+}
