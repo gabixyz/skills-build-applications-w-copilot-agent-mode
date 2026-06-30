@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
+import { connectToDatabase } from './config/database';
 import healthRouter from './routes/health';
 import usersRouter from './routes/users';
 import teamsRouter from './routes/teams';
@@ -17,7 +17,6 @@ const codespaceName = process.env.CODESPACE_NAME;
 const apiBaseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev/api`
   : `http://localhost:${port}/api`;
-const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/octofit_db';
 
 app.use(cors());
 app.use(express.json());
@@ -40,8 +39,7 @@ app.get('/api/config', (_req, res) => {
   });
 });
 
-mongoose
-  .connect(mongoUri)
+connectToDatabase()
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(port, () => {
